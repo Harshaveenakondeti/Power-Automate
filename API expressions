@@ -10,3 +10,13 @@ _api/web/lists/GetByTitle('NASA digital Opportunity Tracker')
 https://mottmac.sharepoint.com/teams/bf-06714/SitePages/Home%20page.aspx?web=1&CT=1707883846629&OR=OWA-NT&CID=57e5e3d1-f345-7ff3-b657-4f8774d95a4e&WSL=1
 
 https://mottmac.sharepoint.com/teams/bf-06397_api/web/lists/GetByTitle('NASA digital Opportunity Tracker')/items(
+_api/web/lists/getByTitle(‘AssignedTo0’)/items(@{triggerOutputs()?[‘body/ID’]})/versions(@{outputs(‘Get_changes_for_an_item_or_a_file_(properties_only)’)?[‘body/SinceVersionId’]
+})
+
+
+@{ add(if(empty(items('Apply_to_each_5')?['SerialNumber']), int(0), int(items('Apply_to_each_5')?['SerialNumber'])),
+ items('Apply_to_each_6')?['SerialNumber'])}
+
+
+@{ add(if(empty(items('Apply_to_each_6')?['ID']), int(0), int(items('Apply_to_each_5')?['SerialNumber'])),
+ items('Apply_to_each_6')?['SerialNumber'])}
